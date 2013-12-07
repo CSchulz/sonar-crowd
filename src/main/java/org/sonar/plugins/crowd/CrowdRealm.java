@@ -20,19 +20,24 @@
 
 package org.sonar.plugins.crowd;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.sonar.api.config.Settings;
+import org.sonar.api.security.LoginPasswordAuthenticator;
+import org.sonar.api.security.SecurityRealm;
 
-import org.sonar.api.Extension;
-import org.sonar.api.SonarPlugin;
+public class CrowdRealm extends SecurityRealm {
+	private final CrowdConfiguration configuration;
 
-/**
- * @author Evgeny Mandrikov
- */
-public class CrowdPlugin extends SonarPlugin {
-	public List<Class<? extends Extension>> getExtensions() {
-		ArrayList<Class<? extends Extension>> extensions = new ArrayList<Class<? extends Extension>>();
-		extensions.add(CrowdRealm.class);
-		return extensions;
+	public CrowdRealm(Settings settings) {
+		this.configuration = new CrowdConfiguration(settings);
+	}
+
+	@Override
+	public LoginPasswordAuthenticator getLoginPasswordAuthenticator() {
+		return new CrowdAuthenticator(configuration);
+	}
+
+	@Override
+	public String getName() {
+		return "Crowd";
 	}
 }

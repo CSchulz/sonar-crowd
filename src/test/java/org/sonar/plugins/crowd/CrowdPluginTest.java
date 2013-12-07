@@ -39,6 +39,6 @@ public class CrowdPluginTest {
 
   @Test
   public void test() {
-    assertThat(plugin.getExtensions().size(), is(2));
+    assertThat(plugin.getExtensions().size(), is(1));
   }
 }
