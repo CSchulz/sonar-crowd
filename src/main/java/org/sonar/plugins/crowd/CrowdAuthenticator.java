@@ -49,9 +49,6 @@ public class CrowdAuthenticator implements LoginPasswordAuthenticator {
     this.configuration = configuration;
   }
 
-  public void init() {
-  }
-
   public boolean authenticate(String login, String password) {
     try {
       AuthenticationManager authenticationManager = CachingManagerFactory.getAuthenticationManagerInstance();
@@ -75,8 +72,11 @@ public class CrowdAuthenticator implements LoginPasswordAuthenticator {
       throw new SonarException(e);
     } catch (ApplicationAccessDeniedException e) {
       CrowdHelper.LOG.error("Could not authenticate " + login + "." +
-          " The user does not have access to authenticate with the Crowd application.", e);
+        " The user does not have access to authenticate with the Crowd application.", e);
     }
     return false;
+  }
+
+  public void init() {
   }
 }

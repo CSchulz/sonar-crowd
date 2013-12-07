@@ -25,19 +25,19 @@ import org.sonar.api.security.LoginPasswordAuthenticator;
 import org.sonar.api.security.SecurityRealm;
 
 public class CrowdRealm extends SecurityRealm {
-	private final CrowdConfiguration configuration;
+  private final CrowdConfiguration configuration;
 
-	public CrowdRealm(Settings settings) {
-		this.configuration = new CrowdConfiguration(settings);
-	}
+  public CrowdRealm(Settings settings) {
+    this.configuration = new CrowdConfiguration(settings);
+  }
 
-	@Override
-	public LoginPasswordAuthenticator getLoginPasswordAuthenticator() {
-		return new CrowdAuthenticator(configuration);
-	}
+  @Override
+  public LoginPasswordAuthenticator getLoginPasswordAuthenticator() {
+    return new CrowdAuthenticator(configuration);
+  }
 
-	@Override
-	public String getName() {
-		return "Crowd";
-	}
+  @Override
+  public String getName() {
+    return "Crowd";
+  }
 }

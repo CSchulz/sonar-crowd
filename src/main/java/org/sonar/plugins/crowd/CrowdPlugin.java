@@ -20,19 +20,19 @@
 
 package org.sonar.plugins.crowd;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.sonar.api.Extension;
 import org.sonar.api.SonarPlugin;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Evgeny Mandrikov
  */
 public class CrowdPlugin extends SonarPlugin {
-	public List<Class<? extends Extension>> getExtensions() {
-		ArrayList<Class<? extends Extension>> extensions = new ArrayList<Class<? extends Extension>>();
-		extensions.add(CrowdRealm.class);
-		return extensions;
-	}
+  public List<Class<? extends Extension>> getExtensions() {
+    ArrayList<Class<? extends Extension>> extensions = new ArrayList<Class<? extends Extension>>();
+    extensions.add(CrowdRealm.class);
+    return extensions;
+  }
 }

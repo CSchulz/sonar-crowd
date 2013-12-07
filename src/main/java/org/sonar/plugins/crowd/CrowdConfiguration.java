@@ -29,8 +29,8 @@ import java.util.Properties;
  * @author Evgeny Mandrikov
  */
 public class CrowdConfiguration implements ServerExtension {
-  private final Settings settings;
   private Properties clientProperties;
+  private final Settings settings;
 
   /**
    * Creates new instance of CrowdConfiguration.
