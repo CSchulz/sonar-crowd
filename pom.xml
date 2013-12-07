@@ -33,6 +33,11 @@
       <name>Evgeny Mandrikov</name>
       <timezone>+3</timezone>
     </developer>
+    <developer>
+      <id>CSchulz</id>
+      <name>Christian Schulz</name>
+      <timezone>+1</timezone>
+    </developer>
   </developers>
 
   <scm>
